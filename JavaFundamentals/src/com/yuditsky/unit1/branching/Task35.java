@@ -16,10 +16,10 @@ public class Task35 {
         do {
             System.out.print("Enter day number: ");
             dayNumber = in.nextInt();
-        }while(dayNumber > dayPerYear | dayNumber <= 0);
+        } while (dayNumber > dayPerYear | dayNumber <= 0);
 
-        for(int i = 0; i < months.length; i++){
-            if(dayNumber > daysMonth[i]){
+        for (int i = 0; i < months.length; i++) {
+            if (dayNumber > daysMonth[i]) {
                 dayNumber -= daysMonth[i];
             } else {
                 System.out.println(dayNumber + " " + months[i]);

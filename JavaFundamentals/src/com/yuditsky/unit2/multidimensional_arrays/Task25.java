@@ -16,13 +16,13 @@ public class Task25 {
         matrix = new int[size][size];
 
         int tmp = 1;
-        for(int i = 0; i < size; i++){
-            for(int j = 0; j < size; j++){
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 matrix[i][j] = tmp++;
             }
         }
 
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
             System.out.println(Arrays.toString(matrix[i]));
     }
 }

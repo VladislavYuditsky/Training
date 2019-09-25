@@ -20,14 +20,14 @@ public class Task20 {
 
         array = new int[size];
 
-        for(int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
             array[i] = random.nextInt(100);
         }
 
         System.out.println(Arrays.toString(array));
 
-        for(int i = 0; i < size; i++){
-            if(i % 2 != 0){
+        for (int i = 0; i < size; i++) {
+            if (i % 2 != 0) {
                 array[i] = 0;
             }
         }

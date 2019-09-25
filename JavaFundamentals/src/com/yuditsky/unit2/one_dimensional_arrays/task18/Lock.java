@@ -5,21 +5,21 @@ import java.util.Random;
 public class Lock {
     private int[] cells = new int[10];
 
-    public Lock(){
+    public Lock() {
         int[] positions = new int[2];
         Random random = new Random();
 
         positions[0] = random.nextInt(9);
         do {
             positions[1] = random.nextInt(9);
-        }while(positions[0] == positions[1]);
+        } while (positions[0] == positions[1]);
 
         cells[positions[0]] = random.nextInt(5) + 1;
         cells[positions[1]] = random.nextInt(5) + 1;
 
     }
 
-    public int[] getCells(){
+    public int[] getCells() {
         return cells;
     }
 
@@ -27,20 +27,20 @@ public class Lock {
         cells[position] = value;
     }
 
-    public int getDice(int position){
+    public int getDice(int position) {
         return cells[position];
     }
 
-    public void pullOutDice(int position){
+    public void pullOutDice(int position) {
         cells[position] = 0;
     }
 
-    public boolean provideAccess(){
-        for(int i = 1; i < cells.length - 1; i++){
-            if (cells[i - 1] != 0 && cells[i] != 0 && cells[i+1] != 0){
-                if(cells[i-1]+cells[i]+cells[i+1] == 10){
+    public boolean provideAccess() {
+        for (int i = 1; i < cells.length - 1; i++) {
+            if (cells[i - 1] != 0 && cells[i] != 0 && cells[i + 1] != 0) {
+                if (cells[i - 1] + cells[i] + cells[i + 1] == 10) {
                     return true;
-                } else{
+                } else {
                     return false;
                 }
             }

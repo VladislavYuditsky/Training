@@ -14,9 +14,9 @@ public class Task32 {
         System.out.println("Enter the string");
         str = in.next();
 
-        if(isCharacter(str.charAt(0)) | isUnderline(str.charAt(0))){
-            for(int i = 0; i < str.length(); i++){
-                if(!isCharacter(str.charAt(i)) & !isUnderline(str.charAt(i)) & !isNumber(str.charAt(i))){
+        if (isCharacter(str.charAt(0)) | isUnderline(str.charAt(0))) {
+            for (int i = 0; i < str.length(); i++) {
+                if (!isCharacter(str.charAt(i)) & !isUnderline(str.charAt(i)) & !isNumber(str.charAt(i))) {
                     System.out.println("Wrong string!");
                     return;
                 }
@@ -29,24 +29,24 @@ public class Task32 {
 
     }
 
-    public static boolean isCharacter(char symbol){
-        if(('A' <= symbol & symbol >= 'Z') | ('a' <= symbol & symbol >= 'z')) {
+    public static boolean isCharacter(char symbol) {
+        if (('A' <= symbol & symbol >= 'Z') | ('a' <= symbol & symbol >= 'z')) {
             return true;
         } else {
             return false;
         }
     }
 
-    public static boolean isUnderline(char symbol){
-        if(symbol == '_'){
+    public static boolean isUnderline(char symbol) {
+        if (symbol == '_') {
             return true;
         } else {
             return false;
         }
     }
 
-    public static boolean isNumber(char symbol){
-        if(symbol >= '0' & symbol <= '9'){
+    public static boolean isNumber(char symbol) {
+        if (symbol >= '0' & symbol <= '9') {
             return true;
         } else {
             return false;

@@ -6,11 +6,11 @@ package com.yuditsky.unit1.cycles;
 public class Task18 {
     public static void main(String[] args) {
         int n = 10;
-        double e = (double)1/3;
+        double e = (double) 1 / 3;
         double sum = 0;
-        for(int i = 1; i <= n; ++i){
-            if(Math.abs(Math.pow((-1),(i-1))/i) >= e){
-                sum += Math.pow((-1),(i-1))/i;
+        for (int i = 1; i <= n; ++i) {
+            if (Math.abs(Math.pow((-1), (i - 1)) / i) >= e) {
+                sum += Math.pow((-1), (i - 1)) / i;
             }
         }
         System.out.println(sum);

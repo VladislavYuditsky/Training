@@ -13,17 +13,17 @@ public class Task21 {
 
         do {
             size = random.nextInt(9) + 1;
-        }while(size%2 != 0);
+        } while (size % 2 != 0);
         matrix = new int[size][size];
 
-        for(int j = 0; j < size; j++){
+        for (int j = 0; j < size; j++) {
             int tmp = size;
-            for(int i = j; i < size; i++){
+            for (int i = j; i < size; i++) {
                 matrix[i][j] = tmp--;
             }
         }
 
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
             System.out.println(Arrays.toString(matrix[i]));
     }
 }

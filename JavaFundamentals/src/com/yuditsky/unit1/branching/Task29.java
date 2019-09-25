@@ -24,7 +24,7 @@ public class Task29 {
         System.out.print("y3 = ");
         y3 = in.nextInt();
 
-        if((x3 - x1) * (y2 - y1) == (y3 - y1) * (x2 - x1)){
+        if ((x3 - x1) * (y2 - y1) == (y3 - y1) * (x2 - x1)) {
             System.out.println("True");
         } else {
             System.out.println("False");

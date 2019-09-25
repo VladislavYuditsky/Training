@@ -18,22 +18,22 @@ public class Task28 {
 
         matrix = new int[rowNum][columnNum];
 
-        for(int i = 0; i < rowNum; i++){
-            for(int j = 0; j < columnNum; j++){
+        for (int i = 0; i < rowNum; i++) {
+            for (int j = 0; j < columnNum; j++) {
                 matrix[i][j] = random.nextInt(10);
             }
         }
 
-        for(int i = 0; i < rowNum; i++){
+        for (int i = 0; i < rowNum; i++) {
             System.out.println(Arrays.toString(matrix[i]));
         }
 
-        for(int j = 0; j < columnNum; j++){
+        for (int j = 0; j < columnNum; j++) {
             int curSum = 0;
-            for(int i = 0; i < rowNum; i++){
+            for (int i = 0; i < rowNum; i++) {
                 curSum += matrix[i][j];
             }
-            if(curSum >= maxSum) {
+            if (curSum >= maxSum) {
                 maxSum = curSum;
                 columnId = j;
             }

@@ -21,17 +21,17 @@ public class Task31 {
         System.out.print("z = ");
         sides.add(inputSide());
 
-        if(a <= b){
+        if (a <= b) {
             int tmp = a;
             a = b;
             b = tmp;
         }
 
-        for(Integer firstSide : sides){
-            if(firstSide <= b){
+        for (Integer firstSide : sides) {
+            if (firstSide <= b) {
                 sides.remove(firstSide);
-                for(Integer secondSide : sides){
-                    if(secondSide <= a){
+                for (Integer secondSide : sides) {
+                    if (secondSide <= a) {
                         System.out.println("Will pass.");
                         return;
                     }

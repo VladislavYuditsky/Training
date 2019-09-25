@@ -17,22 +17,22 @@ public class Task34 {
         rowNum = random.nextInt(9) + 1;
         do {
             columnNum = random.nextInt(9) + 1;
-        }while(rowNum < columnNum);
+        } while (rowNum < columnNum);
 
         matrix = new int[rowNum][columnNum];
 
-        for(int i = 0; i < columnNum; i++){
+        for (int i = 0; i < columnNum; i++) {
             int j = 0;
-            while(j < i){
+            while (j < i) {
                 int randNum = random.nextInt(rowNum - 1);
-                if(matrix[randNum][i] == 0){
+                if (matrix[randNum][i] == 0) {
                     matrix[randNum][i] = 1;
                     j++;
                 }
             }
         }
 
-        for(int i = 0; i < rowNum; i++)
+        for (int i = 0; i < rowNum; i++)
             System.out.println(Arrays.toString(matrix[i]));
     }
 }

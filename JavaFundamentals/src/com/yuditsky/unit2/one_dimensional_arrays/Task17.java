@@ -18,9 +18,9 @@ public class Task17 {
 
         array[0] = random.nextInt(10);
         minNum = array[0];
-        for(int i = 1; i < array.length; i++){
+        for (int i = 1; i < array.length; i++) {
             array[i] = random.nextInt(10);
-            if(minNum > array[i]){
+            if (minNum > array[i]) {
                 minNum = array[i];
             }
         }
@@ -28,23 +28,23 @@ public class Task17 {
         System.out.println(Arrays.toString(array));
 
         int i = 0;
-        do{
-            if(array[i] == minNum){
+        do {
+            if (array[i] == minNum) {
                 diff++;
                 leftShift(array, i);
             } else {
                 i++;
             }
-        }while(i < array.length);
+        } while (i < array.length);
 
         newArray = new int[array.length - diff];
         System.arraycopy(array, 0, newArray, 0, newArray.length);
         System.out.println(Arrays.toString(newArray));
     }
 
-    public static void leftShift(int[] array, int startPosition){
+    public static void leftShift(int[] array, int startPosition) {
         int i;
-        for(i = startPosition; i < array.length - 1; i++){
+        for (i = startPosition; i < array.length - 1; i++) {
             array[i] = array[i + 1];
         }
         array[i] += 1;

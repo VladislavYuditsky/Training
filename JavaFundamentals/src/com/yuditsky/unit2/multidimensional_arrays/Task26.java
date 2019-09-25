@@ -20,22 +20,22 @@ public class Task26 {
         columnNum = in.nextInt();
         matrix = new int[rowNum][columnNum];
 
-        for(int i = 0; i < rowNum; i++){
-            for(int j = 0; j < columnNum; j++){
+        for (int i = 0; i < rowNum; i++) {
+            for (int j = 0; j < columnNum; j++) {
                 System.out.print("matrix[" + i + "][" + j + "] = ");
                 matrix[i][j] = in.nextInt();
             }
         }
 
-        for(int i = 0; i < rowNum; i++){
+        for (int i = 0; i < rowNum; i++) {
             System.out.println(Arrays.toString(matrix[i]));
         }
 
         System.out.println("Negative sum: ");
-        for(int i = 0; i < rowNum; i++){
+        for (int i = 0; i < rowNum; i++) {
             int sum = 0;
-            for(int j = 0; j < columnNum; j++){
-                if(matrix[i][j] < 0) {
+            for (int j = 0; j < columnNum; j++) {
+                if (matrix[i][j] < 0) {
                     sum += matrix[i][j];
                 }
             }
@@ -43,10 +43,10 @@ public class Task26 {
         }
 
         System.out.println("Max element: ");
-        for(int i = 0; i < rowNum; i++){
+        for (int i = 0; i < rowNum; i++) {
             int max = matrix[i][0];
-            for(int j = 1; j < columnNum; j++){
-                if(max < matrix[i][j]){
+            for (int j = 1; j < columnNum; j++) {
+                if (max < matrix[i][j]) {
                     max = matrix[i][j];
                 }
             }
@@ -56,14 +56,14 @@ public class Task26 {
         int max = matrix[0][0];
         int min = matrix[0][0];
         int iMax = 0, jMax = 0, iMin = 0, jMin = 0;
-        for(int i = 0; i < rowNum; i++){
-            for(int j = 0; j < columnNum; j++){
-                if(matrix[i][j] > max){
+        for (int i = 0; i < rowNum; i++) {
+            for (int j = 0; j < columnNum; j++) {
+                if (matrix[i][j] > max) {
                     max = matrix[i][j];
                     iMax = i;
                     jMax = j;
                 }
-                if(matrix[i][j] < min){
+                if (matrix[i][j] < min) {
                     min = matrix[i][j];
                     iMin = i;
                     jMin = j;
@@ -74,7 +74,7 @@ public class Task26 {
         matrix[iMax][jMax] = matrix[iMin][jMin];
         matrix[iMin][jMin] = tmp;
 
-        for(int i = 0; i < rowNum; i++){
+        for (int i = 0; i < rowNum; i++) {
             System.out.println(Arrays.toString(matrix[i]));
         }
     }

@@ -6,44 +6,43 @@
 package com.yuditsky.unit1.cycles;
 
 public class Task37 {
-    public static void main(String[] args){
-        for(int A = 10; A < 100; ++A){
-            for(int B = 10; B < 100; ++B){
-                if(isFound(parseNumber1(A, B), parseNumber2(A, B))){
+    public static void main(String[] args) {
+        for (int A = 10; A < 100; ++A) {
+            for (int B = 10; B < 100; ++B) {
+                if (isFound(parseNumber1(A, B), parseNumber2(A, B))) {
                     System.out.println("A = " + A + " B = " + B);
                 }
             }
         }
     }
 
-    public static int parseNumber1(int A, int B){
+    public static int parseNumber1(int A, int B) {
         int number1;
 
-        number1 = A/10*10;
-        number1 += A%10;
+        number1 = A / 10 * 10;
+        number1 += A % 10;
         number1 *= 10;
-        number1 += B/10;
+        number1 += B / 10;
         number1 *= 10;
-        number1 += B%10;
+        number1 += B % 10;
         return number1;
     }
 
-    public static int parseNumber2(int A, int B){
+    public static int parseNumber2(int A, int B) {
         int number2;
 
-        number2 = B/10*10;
-        number2 += B%10;
+        number2 = B / 10 * 10;
+        number2 += B % 10;
         number2 *= 10;
-        number2 += A/10;
+        number2 += A / 10;
         number2 *= 10;
-        number2 += A%10;
+        number2 += A % 10;
         return number2;
 
     }
 
-    public static boolean isFound(int num1, int num2){
-        if(num1%99==0 & num2%49 == 0)
-        {
+    public static boolean isFound(int num1, int num2) {
+        if (num1 % 99 == 0 & num2 % 49 == 0) {
             return true;
         } else {
             return false;

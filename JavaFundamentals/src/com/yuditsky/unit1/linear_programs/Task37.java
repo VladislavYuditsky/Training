@@ -15,16 +15,16 @@ package com.yuditsky.unit1.linear_programs;
 import java.util.Scanner;
 
 public class Task37 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int choice;
-        int[] testArray1 = { 1, 12, 13, 123};
-        int[] testArray2 = { 1, 1322, 3012, 1234, 12345};
-        int[] testArray3 = { 23, 123, 111, 1234};
-        int[] testArray4 = { 1, 2, 3, 3, 2, 5};
-        int[] testArray5 = { 1, 1234, 10000, 9999};
-        int[] testArray6 = { 1, 2, 1, 0, 3, 3, -5, 3, 3, 1, 2, 3};
-        int[] testArray7 = { 0, 123, 132, 752, 222};
-        int[] testArray8 = { 1, 1, 2, 0, 9, 3};
+        int[] testArray1 = {1, 12, 13, 123};
+        int[] testArray2 = {1, 1322, 3012, 1234, 12345};
+        int[] testArray3 = {23, 123, 111, 1234};
+        int[] testArray4 = {1, 2, 3, 3, 2, 5};
+        int[] testArray5 = {1, 1234, 10000, 9999};
+        int[] testArray6 = {1, 2, 1, 0, 3, 3, -5, 3, 3, 1, 2, 3};
+        int[] testArray7 = {0, 123, 132, 752, 222};
+        int[] testArray8 = {1, 1, 2, 0, 9, 3};
         do {
             choice = menu();
             switch (choice) {
@@ -48,7 +48,7 @@ public class Task37 {
                     }
                     break;
                 case 4:
-                    for(int i = 0; i != testArray4.length;){
+                    for (int i = 0; i != testArray4.length; ) {
                         int m = testArray4[i];
                         int x = testArray4[++i];
                         int n = testArray4[++i];
@@ -68,7 +68,7 @@ public class Task37 {
                     int b;
                     int c;
                     int i = 0;
-                    while(i != testArray6.length){
+                    while (i != testArray6.length) {
                         a = testArray6[i];
                         b = testArray6[++i];
                         c = testArray6[++i];
@@ -85,13 +85,13 @@ public class Task37 {
                     break;
                 case 8:
                     i = 0;
-                    while(i != testArray8.length){
+                    while (i != testArray8.length) {
                         task8(testArray8[i], testArray8[++i]);
                         i++;
                     }
                     break;
             }
-        }while(choice != 0);
+        } while (choice != 0);
     }
 
     public static int menu() {
@@ -111,20 +111,20 @@ public class Task37 {
         do {
             symbol = in.next().charAt(0);
             num = symbol - '0';
-        }while(num < 0 | num > 8);
+        } while (num < 0 | num > 8);
         return num;
     }
 
     public static void task1(int N) {
-        if(N%2 == 0 & N <= 99 & N >= 10) {
+        if (N % 2 == 0 & N <= 99 & N >= 10) {
             System.out.println("true");
         } else {
             System.out.println("false");
         }
     }
 
-    public static void task2(int N){
-        if(N%10 + (N/10)%10 == (N/100)%10 + (N/1000)%10 & N >= 1000 & N <= 9999){
+    public static void task2(int N) {
+        if (N % 10 + (N / 10) % 10 == (N / 100) % 10 + (N / 1000) % 10 & N >= 1000 & N <= 9999) {
             System.out.println("true");
         } else {
             System.out.println("false");
@@ -132,15 +132,15 @@ public class Task37 {
     }
 
     public static void task3(int N) {
-        if(N >= 100 & N <= 999 & (N%10 + ((N/10)%10 + (N/100)%10))%2 == 0){
+        if (N >= 100 & N <= 999 & (N % 10 + ((N / 10) % 10 + (N / 100) % 10)) % 2 == 0) {
             System.out.println("true");
         } else {
             System.out.println("false");
         }
     }
 
-    public static void task4(int m, int x, int n){
-        if(x >= m && x <= n) {
+    public static void task4(int m, int x, int n) {
+        if (x >= m && x <= n) {
             System.out.println("true");
             return;
         }
@@ -150,11 +150,11 @@ public class Task37 {
     public static void task5(int N) {
         String str = String.valueOf(N);
         int sum = 0;
-        if(str.length() == 4){
-            for(int i = 0; i < 4; i++){
+        if (str.length() == 4) {
+            for (int i = 0; i < 4; i++) {
                 sum += str.charAt(i) - '0';
             }
-            if(Math.pow(sum, 3) == Math.pow(N, 2)){
+            if (Math.pow(sum, 3) == Math.pow(N, 2)) {
                 System.out.println("true");
             } else {
                 System.out.println("false");
@@ -164,9 +164,9 @@ public class Task37 {
         }
     }
 
-    public static void task6(int a, int b, int c){
-        if(a > 0 & b > 0 & c > 0) {
-            if(a == b | a == c | b == c) {
+    public static void task6(int a, int b, int c) {
+        if (a > 0 & b > 0 & c > 0) {
+            if (a == b | a == c | b == c) {
                 System.out.println("true");
             } else {
                 System.out.println("false");
@@ -178,7 +178,7 @@ public class Task37 {
 
     public static void task7(int N) {
         String str = String.valueOf(N);
-        if(N >= 100 & N <= 999) {
+        if (N >= 100 & N <= 999) {
             int a = str.charAt(0) - '0';
             int b = str.charAt(1) - '0';
             int c = str.charAt(2) - '0';
@@ -195,8 +195,8 @@ public class Task37 {
     public static void task8(int N, int a) {
         System.out.println("N = " + N + " a = " + a);
         boolean result = false;
-        for(int i = 0; i <= 4; i++){
-            if(N == Math.pow(a, i)){
+        for (int i = 0; i <= 4; i++) {
+            if (N == Math.pow(a, i)) {
                 result = true;
                 break;
             }

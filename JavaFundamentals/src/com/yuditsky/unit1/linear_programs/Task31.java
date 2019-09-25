@@ -9,6 +9,6 @@ public class Task31 {
         int v1 = 5;
         double t1 = 0.5;
         double t2 = 1;
-        System.out.println("S = " + (v*t1+(v-v1)*t2) + " км");
+        System.out.println("S = " + (v * t1 + (v - v1) * t2) + " км");
     }
 }

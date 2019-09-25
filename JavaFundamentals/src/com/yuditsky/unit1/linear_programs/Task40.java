@@ -7,7 +7,7 @@ import static java.lang.Math.pow;
 public class Task40 {
     public static void main(String[] args) {
         int x = 1;
-        System.out.println(-2*x+3*pow(x, 2)-4*pow(x, 3));
-        System.out.println(1+2*x+3*pow(x, 2)+4*pow(x, 3));
+        System.out.println(-2 * x + 3 * pow(x, 2) - 4 * pow(x, 3));
+        System.out.println(1 + 2 * x + 3 * pow(x, 2) + 4 * pow(x, 3));
     }
 }

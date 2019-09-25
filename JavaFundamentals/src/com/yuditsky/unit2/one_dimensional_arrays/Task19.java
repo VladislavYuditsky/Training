@@ -17,25 +17,25 @@ public class Task19 {
         size = random.nextInt(14) + 1;
         System.out.println("Size of array: " + size);
         array = new int[size];
-        for(int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
             array[i] = random.nextInt(10);
         }
-        System.out.println("Array: "+ Arrays.toString(array));
+        System.out.println("Array: " + Arrays.toString(array));
 
         num = array[0];
-        for(int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             curNum = array[i];
             curQuantity = 1;
-            for(int j = i + 1; j < array.length; j++){
-                if(curNum == array[j]){
+            for (int j = i + 1; j < array.length; j++) {
+                if (curNum == array[j]) {
                     curQuantity++;
                 }
             }
-            if(curQuantity > quantity){
+            if (curQuantity > quantity) {
                 num = curNum;
                 quantity = curQuantity;
             }
-            if(curQuantity == quantity && curNum < num){
+            if (curQuantity == quantity && curNum < num) {
                 num = curNum;
             }
         }

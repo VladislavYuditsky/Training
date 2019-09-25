@@ -5,8 +5,8 @@ package com.yuditsky.unit1.cycles;
 
 import java.util.Scanner;
 
-public class Task38{
-    public static void main(String[] args){
+public class Task38 {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int delta = 0;
         String num;
@@ -14,11 +14,11 @@ public class Task38{
         System.out.println("Enter your number: ");
         num = in.next();
 
-        for(int i = num.length() - 1; i > 0; i--){
-            if(delta == 0) {
+        for (int i = num.length() - 1; i > 0; i--) {
+            if (delta == 0) {
                 delta = num.charAt(i) - num.charAt(i - 1);
             } else {
-                if(delta != num.charAt(i) - num.charAt(i - 1)){
+                if (delta != num.charAt(i) - num.charAt(i - 1)) {
                     System.out.println("Wrong!");
                     return;
                 }

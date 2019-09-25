@@ -6,7 +6,7 @@ public class Task16 {
     public static void main(String[] args) {
         int x = 1234;
         int y = 1;
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             y *= x % 10;
             x /= 10;
         }
