@@ -31,7 +31,20 @@ public class Task20 {
                 array[i] = 0;
             }
         }
-
         System.out.println(Arrays.toString(array));
+
+        for (int i = 1; i <= size/2; i++) {
+            leftShift(array, i);
+        }
+        System.out.println(Arrays.toString(array));
+
+    }
+
+    public static void leftShift(int[] array, int startPosition) {
+        int i;
+        for (i = startPosition; i < array.length - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        array[i] = 0;
     }
 }
