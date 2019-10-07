@@ -3,14 +3,13 @@ package com.yuditsky.unit3.classes_and_objects.task2.logic;
 import com.yuditsky.unit3.classes_and_objects.task2.entity.Train;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class TrainDirectory {
     private ArrayList<Train> trains;
 
-    public void sortByDestination(){
-        Collections.sort(trains, Comparator.comparing(Train::getDestination).thenComparing(Train::getDepartureTime));
+    public void sortByDestination() {
+        trains.sort(Comparator.comparing(Train::getDestination).thenComparing(Train::getDepartureTime));
     }
 
     public String getInfo(Integer number) {
@@ -21,7 +20,7 @@ public class TrainDirectory {
     }
 
     public void sortByNumber() {
-        Collections.sort(trains, Comparator.comparing(Train::getNumber));
+        trains.sort(Comparator.comparing(Train::getNumber));
     }
 
     public Train getTrain(int index) {

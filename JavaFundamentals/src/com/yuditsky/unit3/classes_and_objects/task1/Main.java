@@ -20,11 +20,11 @@ public class Main {
                 new Student("Ivanov", "I.I.", 54321, 10),
                 new Student("Petuhov", "K.O.", 11111, new int[]{9, 9, 9, 9, 9}),
                 new Student("Kurochkin", "K.O.", 22222, new int[]{9, 9, 9}),
-                new Student("Da", "D.A.", 12121, new int[]{10 , 10 , 10, 10, 10, 2}),
+                new Student("Da", "D.A.", 12121, new int[]{10, 10, 10, 10, 10, 2}),
         };
 
-        for( int i = 0; i < students.length; i++){
-            if(studentLogic.isExcellent(students[i])){
+        for (int i = 0; i < students.length; i++) {
+            if (studentLogic.isExcellent(students[i])) {
                 System.out.println(students[i].getSurname() + " " + students[i].getGroupNumber());
             }
         }

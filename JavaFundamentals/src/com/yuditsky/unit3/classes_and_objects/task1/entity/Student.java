@@ -32,9 +32,9 @@ public class Student {
 
     public Student(String surname, String initials, int groupNumber, int[] progress) {
         this(surname, initials, groupNumber);
-        if(progress.length > this.progress.length){
+        if (progress.length > this.progress.length) {
             System.arraycopy(progress, 0, this.progress, 0, this.progress.length);
-        } else{
+        } else {
             System.arraycopy(progress, 0, this.progress, 0, progress.length);
         }
     }

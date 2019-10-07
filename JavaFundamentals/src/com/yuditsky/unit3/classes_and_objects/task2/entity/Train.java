@@ -5,14 +5,17 @@ public class Train {
     private String departureTime;
     private String destination;
 
-    public Train(int number, String departureTime, String destination){
+    public Train(int number, String departureTime, String destination) {
         this.number = number;
         this.departureTime = departureTime;
         this.destination = destination;
     }
 
+    public Train() {
+    }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Number: " + this.getNumber() + " departure time: " +
                 this.getDepartureTime() + " destination: " + this.getDestination();
     }

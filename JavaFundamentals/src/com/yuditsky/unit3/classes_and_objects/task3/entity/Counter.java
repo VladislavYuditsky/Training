@@ -11,7 +11,7 @@ public class Counter {
     }
 
     public Counter(int start, int limit) {
-        if(limit < 0 || start < 0){
+        if (limit < 0 || start < 0) {
             this.limit = this.start = current = 0;
         } else {
             if (limit < start) {
@@ -26,7 +26,7 @@ public class Counter {
 
     public Counter(int limit) {
         current = start = 0;
-        if(limit < 0){
+        if (limit < 0) {
             this.limit = 0;
         } else {
             this.limit = limit;
@@ -38,7 +38,7 @@ public class Counter {
     }
 
     public void setStart(int start) {
-       this.start = start;
+        this.start = start;
     }
 
     public int getLimit() {
@@ -58,7 +58,7 @@ public class Counter {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Start: " + start + " limit: " + limit + " current: " + current;
     }
 }

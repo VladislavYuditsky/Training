@@ -3,24 +3,51 @@ package com.yuditsky.unit3.classes_and_objects.task4.logic;
 import com.yuditsky.unit3.classes_and_objects.task4.entity.Clock;
 
 public class Tuner {
-    private Clock clock;
 
-    public Tuner(Clock clock) {
-        this.clock = clock;
+    public void spinUp(Clock clock, int hour, int minute, int second) {
+        clock.setSecond((clock.getSecond() + second) % 60);
+        clock.setMinute(((clock.getSecond() + second) / 60 + clock.getMinute() + minute) % 60);
+        clock.setHour(((((clock.getSecond() + second) / 60 + clock.getMinute() + minute) / 60 + clock.getHour() + hour) % 24));
     }
 
-    public Clock getClock() {
-        return clock;
+    public void spinDown(Clock clock, int hour, int minute, int second) {
+        secondDown(clock, second);
+        minuteDown(clock, minute);
+        hourDown(clock, hour);
     }
 
-    public void setClock(Clock clock) {
-        this.clock = clock;
+    private void secondDown(Clock clock, int second) {
+        int diff;
+
+        diff = clock.getSecond() - second;
+        while (diff < 0) {
+            diff += 60;
+            minuteDown(clock, 1);
+        }
+
+        clock.setSecond(diff);
     }
 
-    /*System.out.println(m + " ч " + n + " мин " + k + " c + " + p + " ч " + q + " мин " + r + " c = ");
-        System.out.print(((((k + r) / 60 + n + q) / 60 + m + p) % 24) + " ч ");
-        System.out.print(((k + r) / 60 + n + q) % 60 + " мин ");
-        System.out.print((k + r) % 60 + " c");*/
+    private void minuteDown(Clock clock, int minute) {
+        int diff;
 
-    //public void setTime(int hour, int minute, int )
+        diff = clock.getMinute() - minute;
+        while (diff < 0) {
+            diff += 60;
+            hourDown(clock, 1);
+        }
+
+        clock.setMinute(diff);
+    }
+
+    private void hourDown(Clock clock, int hour) {
+        int diff;
+
+        diff = clock.getHour() - hour;
+        while (diff < 0) {
+            diff += 24;
+        }
+
+        clock.setHour(diff);
+    }
 }

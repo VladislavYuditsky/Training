@@ -22,14 +22,14 @@ public class Main {
         trainDirectory.addTrain(new Train(14, "0:33", "Brest"));
         trainDirectory.addTrain(new Train(7, "21:17", "Brest"));
 
-        for(int i = 0; i < trainDirectory.numberOfTrains(); i++){
+        for (int i = 0; i < trainDirectory.numberOfTrains(); i++) {
             System.out.println(trainDirectory.getTrain(i).toString());
         }
 
         trainDirectory.sortByNumber();
         System.out.println("Sort by number:");
 
-        for(int i = 0; i < trainDirectory.numberOfTrains(); i++){
+        for (int i = 0; i < trainDirectory.numberOfTrains(); i++) {
             System.out.println(trainDirectory.getTrain(i).toString());
         }
 
@@ -39,7 +39,7 @@ public class Main {
         trainDirectory.sortByDestination();
         System.out.println("Sort by destination:");
 
-        for(int i = 0; i < trainDirectory.numberOfTrains(); i++){
+        for (int i = 0; i < trainDirectory.numberOfTrains(); i++) {
             System.out.println(trainDirectory.getTrain(i).toString());
         }
     }
