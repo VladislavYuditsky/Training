@@ -10,26 +10,27 @@
 package com.yuditsky.unit3.classes_and_objects.task5;
 
 import com.yuditsky.unit3.classes_and_objects.task5.entity.Customer;
-import com.yuditsky.unit3.classes_and_objects.task5.logic.CustomerBase;
+import com.yuditsky.unit3.classes_and_objects.task5.entity.TradingFloor;
+import com.yuditsky.unit3.classes_and_objects.task5.logic.TradingFloorLogic;
 
 public class Main {
     public static void main(String[] args) {
-        CustomerBase customerBase = new CustomerBase(new Customer());
+        TradingFloor tradingFloor = new TradingFloor(new Customer());
 
-        customerBase.add(new Customer());
-        customerBase.add(new Customer("Ivanov", "Ivan", "Ivanich"));
-        customerBase.add(new Customer("Petrov", "Petr", "Petrovich",
+        tradingFloor.getCustomers().add(new Customer());
+        tradingFloor.getCustomers().add(new Customer("Ivanov", "Ivan", "Ivanich"));
+        tradingFloor.getCustomers().add(new Customer("Petrov", "Petr", "Petrovich",
                 "Minsk, ul.Gikalo, d.9", 12345, 777));
-        customerBase.add(new Customer(12346));
-        customerBase.add(new Customer(12344));
+        tradingFloor.getCustomers().add(new Customer(12346));
+        tradingFloor.getCustomers().add(new Customer(12344));
 
-        for (Customer customer : customerBase.getCustomers()) {
+        for (Customer customer : tradingFloor.getCustomers()) {
             System.out.println(customer.toString());
             System.out.println();
         }
 
         System.out.println("\n\nCustomer list in alphabetical order\n");
-        for (Customer customer : customerBase.getListOfCustomers()) {
+        for (Customer customer : TradingFloorLogic.getListOfCustomers(tradingFloor)) {
             System.out.println(customer);
             System.out.println();
         }
@@ -40,7 +41,7 @@ public class Main {
         int to = 12355;
         System.out.println("from " + from + " to " + to);
         System.out.println();
-        for (Customer customer : customerBase.getListOfCustomers(from, to)) {
+        for (Customer customer : TradingFloorLogic.getListOfCustomers(tradingFloor, from, to)) {
             System.out.println(customer);
             System.out.println();
         }

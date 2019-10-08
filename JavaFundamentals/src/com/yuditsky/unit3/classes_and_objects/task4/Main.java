@@ -6,19 +6,17 @@
 package com.yuditsky.unit3.classes_and_objects.task4;
 
 import com.yuditsky.unit3.classes_and_objects.task4.entity.Clock;
-import com.yuditsky.unit3.classes_and_objects.task4.logic.Tuner;
 
 public class Main {
     public static void main(String[] args) {
         Clock clock = new Clock();
-        Tuner tuner = new Tuner();
 
         System.out.println(clock);
 
-        tuner.spinUp(clock, 2, 2, 65);
+        clock.spinUp(2, 2, 65);
         System.out.println(clock);
 
-        tuner.spinDown(clock, 3, 120, 120);
+        clock.spinDown(3, 120, 120);
         System.out.println(clock);
     }
 }

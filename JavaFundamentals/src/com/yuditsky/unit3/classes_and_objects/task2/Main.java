@@ -7,7 +7,8 @@
 package com.yuditsky.unit3.classes_and_objects.task2;
 
 import com.yuditsky.unit3.classes_and_objects.task2.entity.Train;
-import com.yuditsky.unit3.classes_and_objects.task2.logic.TrainDirectory;
+import com.yuditsky.unit3.classes_and_objects.task2.entity.TrainDirectory;
+import com.yuditsky.unit3.classes_and_objects.task2.logic.TrainDirectoryLogic;
 
 import java.util.Scanner;
 
@@ -17,30 +18,30 @@ public class Main {
         TrainDirectory trainDirectory;
         trainDirectory = new TrainDirectory(new Train(1, "1:11", "Brest"));
 
-        trainDirectory.addTrain(new Train(3, "3:33", "Grodno"));
-        trainDirectory.addTrain(new Train(44, "5:15", "Gomel"));
-        trainDirectory.addTrain(new Train(14, "0:33", "Brest"));
-        trainDirectory.addTrain(new Train(7, "21:17", "Brest"));
+        trainDirectory.trains().add(new Train(3, "3:33", "Grodno"));
+        trainDirectory.trains().add(new Train(44, "5:15", "Gomel"));
+        trainDirectory.trains().add(new Train(14, "0:33", "Brest"));
+        trainDirectory.trains().add(new Train(7, "21:17", "Brest"));
 
-        for (int i = 0; i < trainDirectory.numberOfTrains(); i++) {
-            System.out.println(trainDirectory.getTrain(i).toString());
+        for (int i = 0; i < trainDirectory.trains().size(); i++) {
+            System.out.println(trainDirectory.trains().get(i).toString());
         }
 
-        trainDirectory.sortByNumber();
+        TrainDirectoryLogic.sortByNumber(trainDirectory);
         System.out.println("Sort by number:");
 
-        for (int i = 0; i < trainDirectory.numberOfTrains(); i++) {
-            System.out.println(trainDirectory.getTrain(i).toString());
+        for (int i = 0; i < trainDirectory.trains().size(); i++) {
+            System.out.println(trainDirectory.trains().get(i).toString());
         }
 
         System.out.println("Enter number of train: ");
-        System.out.println(trainDirectory.getInfo(in.nextInt()));
+        System.out.println(TrainDirectoryLogic.takeInfo(trainDirectory, in.nextInt()));
 
-        trainDirectory.sortByDestination();
+        TrainDirectoryLogic.sortByDestination(trainDirectory);
         System.out.println("Sort by destination:");
 
-        for (int i = 0; i < trainDirectory.numberOfTrains(); i++) {
-            System.out.println(trainDirectory.getTrain(i).toString());
+        for (int i = 0; i < trainDirectory.trains().size(); i++) {
+            System.out.println(trainDirectory.trains().get(i).toString());
         }
     }
 }

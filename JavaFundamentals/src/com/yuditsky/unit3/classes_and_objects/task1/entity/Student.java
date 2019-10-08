@@ -70,4 +70,63 @@ public class Student {
     public void setProgress(int[] progress) {
         this.progress = progress;
     }
+
+    @Override
+    public boolean equals(Object obj){
+
+        if(this == obj){
+            return true;
+        }
+
+        if(obj == null){
+            return false;
+        }
+
+        if(getClass()!=obj.getClass()){
+            return false;
+        }
+
+        Student student = (Student) obj;
+        if(groupNumber != student.groupNumber){
+            return false;
+        }
+
+        if(progress == null){
+            return progress == student.progress;
+        } else{
+            if(!progress.equals(student.progress)){
+                return false;
+            }
+        }
+
+        if(surname == null){
+            return surname == student.surname;
+        } else{
+            if(!surname.equals(student.surname)){
+                return false;
+            }
+        }
+
+        if(initials == null){
+            return initials == student.initials;
+        } else{
+            if(!initials.equals(student.initials)){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode(){
+        return 31 * groupNumber + ((progress == null) ? 0 : progress.hashCode()) +
+                ((surname == null) ? 0 : surname.hashCode() + ((initials == null) ? 0 : initials.hashCode()));
+    }
+
+    @Override
+    public String toString(){
+        return getClass().getName() + "@" + "surname: " + surname + ", initials: " + initials + ", group number: " +
+                groupNumber + ", progress: " + progress;
+    }
 }

@@ -1,9 +1,9 @@
-package com.yuditsky.unit3.classes_and_objects.task3.ui;
+package com.yuditsky.unit3.classes_and_objects.task3.view;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-public class CounterUI {
+public class CounterView {
 
     public void print(String string) {
         System.out.println(string);

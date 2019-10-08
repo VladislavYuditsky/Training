@@ -1,6 +1,7 @@
 package com.yuditsky.unit3.classes_and_objects.task3.entity;
 
 public class Counter {
+
     private int start;
     private int limit;
     private int current;
@@ -57,8 +58,56 @@ public class Counter {
         this.current = current;
     }
 
+    public void up() {
+        if (current != limit) {
+            current += 1;
+        }
+    }
+
+    public void down() {
+        if (current != start) {
+            current -= 1;
+        }
+    }
+
     @Override
-    public String toString() {
-        return "Start: " + start + " limit: " + limit + " current: " + current;
+    public boolean equals(Object obj){
+
+        if(this == obj){
+            return true;
+        }
+
+        if(obj == null){
+            return false;
+        }
+
+        if(getClass()!=obj.getClass()){
+            return false;
+        }
+
+        Counter counter = (Counter) obj;
+        if(start != counter.start){
+            return false;
+        }
+
+        if(current != counter.current){
+            return false;
+        }
+
+        if(limit != counter.limit){
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode(){
+        return 31 * start + 29 * limit + 17 * current;
+    }
+
+    @Override
+    public String toString(){
+        return getClass().getName() + "@" + "start: " + start + ", current: " + current + ", limit: " + limit;
     }
 }

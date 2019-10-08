@@ -99,8 +99,79 @@ public class Customer {
     }
 
     @Override
+    public boolean equals(Object obj) {
+
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null) {
+            return false;
+        }
+
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Customer customer = (Customer) obj;
+        if (id != customer.id) {
+            return false;
+        }
+
+        if (surname == null) {
+            return surname == customer.surname;
+        } else {
+            if (!surname.equals(customer.surname)) {
+                return false;
+            }
+        }
+
+        if (name == null) {
+            return name == customer.name;
+        } else {
+            if (!name.equals(customer.name)) {
+                return false;
+            }
+        }
+
+        if (patronymic == null) {
+            return patronymic == customer.patronymic;
+        } else {
+            if (!patronymic.equals(customer.patronymic)) {
+                return false;
+            }
+        }
+
+        if (address == null) {
+            return address == customer.address;
+        } else {
+            if (!address.equals(customer.address)) {
+                return false;
+            }
+        }
+
+        if (creditCard != customer.creditCard) {
+            return false;
+        }
+
+        if (bankAccount != customer.bankAccount) {
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return 31 * id + ((surname == null) ? 0 : surname.hashCode()) + ((name == null) ? 0 : name.hashCode() +
+                ((patronymic == null) ? 0 : patronymic.hashCode()) + ((address == null) ? 0 : address.hashCode()) +
+                    29 * creditCard + 17 * bankAccount);
+    }
+
+    @Override
     public String toString() {
-        return "id: " + id + "; surname " + surname + "; name " + name + "; patronymic " + patronymic + "; " +
-                "\naddress " + address + "; credit card " + creditCard + "; bank account " + bankAccount + ";";
+        return getClass().getName() + "@" + "id: " + id + ", surname: " + surname + ", name: " +
+                name + ", patronymics: " + patronymic + ", address: " + address + ", credit card: " +
+                    creditCard + ", bank account: " + bankAccount;
     }
 }

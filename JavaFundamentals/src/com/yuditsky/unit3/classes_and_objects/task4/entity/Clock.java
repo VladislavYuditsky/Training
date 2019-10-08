@@ -61,8 +61,126 @@ public class Clock {
         }
     }
 
+    public void spinUp(int hour, int minute, int second) {
+        secondUp(second);
+        minuteUp(minute);
+        hourUp(hour);
+    }
+
+    private void secondUp(int second) {
+        int newValue;
+
+        newValue = this.second + second;
+        while (newValue > 60) {
+            newValue -= 60;
+            minuteUp(1);
+        }
+
+        this.second = newValue;
+    }
+
+    private void minuteUp(int minute) {
+        int newValue;
+
+        newValue = this.minute + minute;
+        while (newValue > 60) {
+            newValue -= 60;
+            hourUp(1);
+        }
+
+        this.minute = newValue;
+    }
+
+    private void hourUp(int hour) {
+        int newValue;
+
+        newValue = this.hour + hour;
+        while (hour > 24) {
+            newValue -= 24;
+        }
+
+        this.hour = newValue;
+    }
+
+    public void spinDown(int hour, int minute, int second) {
+        secondDown(second);
+        minuteDown(minute);
+        hourDown(hour);
+    }
+
+    private void secondDown(int second) {
+        int newValue;
+
+        newValue = this.second - second;
+        while (newValue < 0) {
+            newValue += 60;
+            minuteDown(1);
+        }
+
+        this.second = newValue;
+    }
+
+    private void minuteDown(int minute) {
+        int newValue;
+
+        newValue = this.minute - minute;
+        while (newValue < 0) {
+            newValue += 60;
+            hourDown(1);
+        }
+
+        this.minute = newValue;
+    }
+
+    private void hourDown(int hour) {
+        int newValue;
+
+        newValue = this.hour - hour;
+        while (newValue < 0) {
+            newValue += 24;
+        }
+
+        this.hour = newValue;
+    }
+
     @Override
-    public String toString() {
-        return hour + " hour " + minute + " minute " + second + " second";
+    public boolean equals(Object obj){
+
+        if(this == obj){
+            return true;
+        }
+
+        if(obj == null){
+            return false;
+        }
+
+        if(getClass()!=obj.getClass()){
+            return false;
+        }
+
+        Clock clock = (Clock) obj;
+        if(second != clock.second){
+            return false;
+        }
+
+        if(minute != clock.minute){
+            return false;
+        }
+
+        if(hour != clock.hour){
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode(){
+        return 31 * second + 29 * minute + 17 * hour;
+    }
+
+    @Override
+    public String toString(){
+        return getClass().getName() + "@" + "hour: " + hour + ", minute: " + minute + ", second: " + second;
     }
 }
