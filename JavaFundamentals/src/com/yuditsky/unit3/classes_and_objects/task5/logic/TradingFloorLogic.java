@@ -8,7 +8,7 @@ import java.util.Comparator;
 
 public class TradingFloorLogic {
 
-    public static ArrayList<Customer> getListOfCustomers(TradingFloor tradingFloor, int from, int to) {
+    public static ArrayList<Customer> listOfCustomers(TradingFloor tradingFloor, int from, int to) {
         return pickOut(tradingFloor, from, to);
     }
 
@@ -22,7 +22,7 @@ public class TradingFloorLogic {
         return resList;
     }
 
-    public static ArrayList<Customer> getListOfCustomers(TradingFloor tradingFloor) {
+    public static ArrayList<Customer> listOfCustomers(TradingFloor tradingFloor) {
         return sortAlphabetically(tradingFloor);
     }
 

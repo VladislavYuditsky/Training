@@ -30,7 +30,7 @@ public class Main {
         }
 
         System.out.println("\n\nCustomer list in alphabetical order\n");
-        for (Customer customer : TradingFloorLogic.getListOfCustomers(tradingFloor)) {
+        for (Customer customer : TradingFloorLogic.listOfCustomers(tradingFloor)) {
             System.out.println(customer);
             System.out.println();
         }
@@ -41,7 +41,7 @@ public class Main {
         int to = 12355;
         System.out.println("from " + from + " to " + to);
         System.out.println();
-        for (Customer customer : TradingFloorLogic.getListOfCustomers(tradingFloor, from, to)) {
+        for (Customer customer : TradingFloorLogic.listOfCustomers(tradingFloor, from, to)) {
             System.out.println(customer);
             System.out.println();
         }

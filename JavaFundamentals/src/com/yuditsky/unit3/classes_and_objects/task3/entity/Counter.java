@@ -12,26 +12,13 @@ public class Counter {
     }
 
     public Counter(int start, int limit) {
-        if (limit < 0 || start < 0) {
-            this.limit = this.start = current = 0;
-        } else {
-            if (limit < start) {
-                current = this.start = limit;
-                this.limit = start;
-            } else {
-                current = this.start = start;
-                this.limit = limit;
-            }
-        }
+        this.start = current = start;
+        this.limit = limit;
     }
 
     public Counter(int limit) {
         current = start = 0;
-        if (limit < 0) {
-            this.limit = 0;
-        } else {
-            this.limit = limit;
-        }
+        this.limit = limit;
     }
 
     public int getStart() {
