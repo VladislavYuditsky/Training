@@ -144,30 +144,30 @@ public class Clock {
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
 
-        if(this == obj){
+        if (this == obj) {
             return true;
         }
 
-        if(obj == null){
+        if (obj == null) {
             return false;
         }
 
-        if(getClass()!=obj.getClass()){
+        if (getClass() != obj.getClass()) {
             return false;
         }
 
         Clock clock = (Clock) obj;
-        if(second != clock.second){
+        if (second != clock.second) {
             return false;
         }
 
-        if(minute != clock.minute){
+        if (minute != clock.minute) {
             return false;
         }
 
-        if(hour != clock.hour){
+        if (hour != clock.hour) {
             return false;
         }
 
@@ -175,12 +175,12 @@ public class Clock {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return 31 * second + 29 * minute + 17 * hour;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return getClass().getName() + "@" + "hour: " + hour + ", minute: " + minute + ", second: " + second;
     }
 }

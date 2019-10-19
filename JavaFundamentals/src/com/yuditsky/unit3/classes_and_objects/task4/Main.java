@@ -11,12 +11,12 @@ public class Main {
     public static void main(String[] args) {
         Clock clock = new Clock();
 
-        System.out.println(clock);
+        System.out.println("Hour: " + clock.getHour() + ", minute: " + clock.getMinute() + ", second: " + clock.getSecond());
 
         clock.spinUp(2, 2, 65);
-        System.out.println(clock);
+        System.out.println("Hour: " + clock.getHour() + ", minute: " + clock.getMinute() + ", second: " + clock.getSecond());
 
         clock.spinDown(3, 120, 120);
-        System.out.println(clock);
+        System.out.println("Hour: " + clock.getHour() + ", minute: " + clock.getMinute() + ", second: " + clock.getSecond());
     }
 }
