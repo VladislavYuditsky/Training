@@ -41,7 +41,7 @@ public class Main {
                     view.pressEnterKey();
                     break;
                 case 2:
-                    view.print(counter.toString());
+                    view.print(counter);
                     view.pressEnterKey();
                     break;
                 case 3:

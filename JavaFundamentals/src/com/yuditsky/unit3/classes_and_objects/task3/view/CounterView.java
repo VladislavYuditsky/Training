@@ -1,5 +1,7 @@
 package com.yuditsky.unit3.classes_and_objects.task3.view;
 
+import com.yuditsky.unit3.classes_and_objects.task3.entity.Counter;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -7,6 +9,11 @@ public class CounterView {
 
     public void print(String string) {
         System.out.println(string);
+    }
+
+    public void print(Counter counter) {
+        System.out.println("Start: " + counter.getStart() + ", limit: " + counter.getLimit() + ", current: "
+                + counter.getCurrent());
     }
 
     public void print(int num) {

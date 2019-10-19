@@ -58,30 +58,30 @@ public class Counter {
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
 
-        if(this == obj){
+        if (this == obj) {
             return true;
         }
 
-        if(obj == null){
+        if (obj == null) {
             return false;
         }
 
-        if(getClass()!=obj.getClass()){
+        if (getClass() != obj.getClass()) {
             return false;
         }
 
         Counter counter = (Counter) obj;
-        if(start != counter.start){
+        if (start != counter.start) {
             return false;
         }
 
-        if(current != counter.current){
+        if (current != counter.current) {
             return false;
         }
 
-        if(limit != counter.limit){
+        if (limit != counter.limit) {
             return false;
         }
 
@@ -89,12 +89,12 @@ public class Counter {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return 31 * start + 29 * limit + 17 * current;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return getClass().getName() + "@" + "start: " + start + ", current: " + current + ", limit: " + limit;
     }
 }
