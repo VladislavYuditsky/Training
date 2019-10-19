@@ -28,25 +28,25 @@ public class TrainDirectory {
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
 
-        if(this == obj){
+        if (this == obj) {
             return true;
         }
 
-        if(obj == null){
+        if (obj == null) {
             return false;
         }
 
-        if(getClass()!=obj.getClass()){
+        if (getClass() != obj.getClass()) {
             return false;
         }
 
         TrainDirectory directory = (TrainDirectory) obj;
-        if(trains == null){
+        if (trains == null) {
             return trains == directory.trains;
-        } else{
-            if(!trains.equals(directory.trains)){
+        } else {
+            if (!trains.equals(directory.trains)) {
                 return false;
             }
         }
@@ -55,12 +55,12 @@ public class TrainDirectory {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return (trains == null) ? 0 : trains.hashCode();
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return getClass().getName() + "@" + "trains: " + trains;
     }
 }

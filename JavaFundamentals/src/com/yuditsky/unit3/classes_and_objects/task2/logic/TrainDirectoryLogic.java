@@ -13,8 +13,9 @@ public class TrainDirectoryLogic {
 
     public static String takeInfo(TrainDirectory directory, Integer number) {
         for (Train train : directory.trains()) {
-            if (train.getNumber() == number) return "Number: " + train.getNumber() + ", departure time: " + train.getDepartureTime()
-                    + ", destination: " + train.getDestination();
+            if (train.getNumber() == number)
+                return "Number: " + train.getNumber() + ", departure time: " + train.getDepartureTime()
+                        + ", destination: " + train.getDestination();
         }
         return "The train with the given number is missing";
     }
