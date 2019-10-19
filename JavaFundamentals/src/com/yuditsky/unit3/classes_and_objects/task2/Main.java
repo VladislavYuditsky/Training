@@ -24,24 +24,31 @@ public class Main {
         trainDirectory.trains().add(new Train(7, "21:17", "Brest"));
 
         for (int i = 0; i < trainDirectory.trains().size(); i++) {
-            System.out.println(trainDirectory.trains().get(i).toString());
+            Train train = trainDirectory.trains().get(i);
+            System.out.println("Number: " + train.getNumber() + ", departure time: " + train.getDepartureTime()
+                    + ", destination: " + train.getDestination());
         }
 
         TrainDirectoryLogic.sortByNumber(trainDirectory);
-        System.out.println("Sort by number:");
+        System.out.println("\nSort by number:");
 
         for (int i = 0; i < trainDirectory.trains().size(); i++) {
-            System.out.println(trainDirectory.trains().get(i).toString());
+            Train train = trainDirectory.trains().get(i);
+            System.out.println("Number: " + train.getNumber() + ", departure time: " + train.getDepartureTime()
+                    + ", destination: " + train.getDestination());
         }
 
+        System.out.println("\nGet info by number");
         System.out.println("Enter number of train: ");
         System.out.println(TrainDirectoryLogic.takeInfo(trainDirectory, in.nextInt()));
 
         TrainDirectoryLogic.sortByDestination(trainDirectory);
-        System.out.println("Sort by destination:");
+        System.out.println("\nSort by destination:");
 
         for (int i = 0; i < trainDirectory.trains().size(); i++) {
-            System.out.println(trainDirectory.trains().get(i).toString());
+            Train train = trainDirectory.trains().get(i);
+            System.out.println("Number: " + train.getNumber() + ", departure time: " + train.getDepartureTime()
+                    + ", destination: " + train.getDestination());
         }
     }
 }
