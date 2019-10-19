@@ -27,25 +27,25 @@ public class TradingFloor {
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
 
-        if(this == obj){
+        if (this == obj) {
             return true;
         }
 
-        if(obj == null){
+        if (obj == null) {
             return false;
         }
 
-        if(getClass()!=obj.getClass()){
+        if (getClass() != obj.getClass()) {
             return false;
         }
 
         TradingFloor tradingFloor = (TradingFloor) obj;
-        if(customers == null){
+        if (customers == null) {
             return customers == tradingFloor.customers;
-        } else{
-            if(!customers.equals(tradingFloor.customers)){
+        } else {
+            if (!customers.equals(tradingFloor.customers)) {
                 return false;
             }
         }
@@ -54,12 +54,12 @@ public class TradingFloor {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return (customers == null) ? 0 : customers.hashCode();
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return getClass().getName() + "@" + "customers: " + customers;
     }
 }

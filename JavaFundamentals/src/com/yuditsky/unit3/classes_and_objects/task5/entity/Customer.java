@@ -165,13 +165,13 @@ public class Customer {
     public int hashCode() {
         return 31 * id + ((surname == null) ? 0 : surname.hashCode()) + ((name == null) ? 0 : name.hashCode() +
                 ((patronymic == null) ? 0 : patronymic.hashCode()) + ((address == null) ? 0 : address.hashCode()) +
-                    29 * creditCard + 17 * bankAccount);
+                29 * creditCard + 17 * bankAccount);
     }
 
     @Override
     public String toString() {
         return getClass().getName() + "@" + "id: " + id + ", surname: " + surname + ", name: " +
                 name + ", patronymics: " + patronymic + ", address: " + address + ", credit card: " +
-                    creditCard + ", bank account: " + bankAccount;
+                creditCard + ", bank account: " + bankAccount;
     }
 }

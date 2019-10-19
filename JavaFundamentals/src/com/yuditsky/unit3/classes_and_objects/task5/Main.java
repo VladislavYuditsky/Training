@@ -25,25 +25,30 @@ public class Main {
         tradingFloor.getCustomers().add(new Customer(12344));
 
         for (Customer customer : tradingFloor.getCustomers()) {
-            System.out.println(customer.toString());
-            System.out.println();
+            System.out.println("Id: " + customer.getId() + ", surname: " + customer.getSurname() + ", name: "
+                    + customer.getName() + ", patronymics: " + customer.getPatronymic() + ",\naddress: "
+                    + customer.getAddress() + ", credit card: " + customer.getCreditCard() + ", bank account: "
+                    + customer.getBankAccount());
         }
 
-        System.out.println("\n\nCustomer list in alphabetical order\n");
+        System.out.println("\nCustomer list in alphabetical order:");
         for (Customer customer : TradingFloorLogic.listOfCustomers(tradingFloor)) {
-            System.out.println(customer);
-            System.out.println();
+            System.out.println("Id: " + customer.getId() + ", surname: " + customer.getSurname() + ", name: "
+                    + customer.getName() + ", patronymics: " + customer.getPatronymic() + ",\naddress: "
+                    + customer.getAddress() + ", credit card: " + customer.getCreditCard() + ", bank account: "
+                    + customer.getBankAccount());
         }
 
 
-        System.out.println("\n\nList of customers whose credit card number is in the specified interval");
+        System.out.println("\nList of customers whose credit card number is in the specified interval:");
         int from = 12345;
         int to = 12355;
         System.out.println("from " + from + " to " + to);
-        System.out.println();
         for (Customer customer : TradingFloorLogic.listOfCustomers(tradingFloor, from, to)) {
-            System.out.println(customer);
-            System.out.println();
+            System.out.println("Id: " + customer.getId() + ", surname: " + customer.getSurname() + ", name: "
+                    + customer.getName() + ", patronymics: " + customer.getPatronymic() + ",\naddress: "
+                    + customer.getAddress() + ", credit card: " + customer.getCreditCard() + ", bank account: "
+                    + customer.getBankAccount());
         }
     }
 }
